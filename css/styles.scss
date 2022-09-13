@@ -1,0 +1,236 @@
+$main_font: 'Poppins', sans-serif;
+$main_font_color: #404242;
+$main_font_h_color: #1C2323;
+$white_color: #FFFFFF;
+
+$main_font_style: normal;
+$main_font_weight: 400;
+$main_font_size: 25px;
+$main_font_line_height: 38px;
+
+
+@mixin max-screen($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $main_font;
+  font-style: $main_font_style;
+  font-weight: $main_font_weight;
+  font-size: $main_font_size;
+  line-height: $main_font_line_height;
+  color: $main_font_color;
+}
+
+.container {
+  max-width: 1612px;
+  margin: auto;
+  padding: 0 15px;
+
+  @include max-screen(767px) {
+    padding: 0 5px;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+h1, h2 {
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 105px;
+  color: $main_font_h_color;
+
+  @include max-screen(1200px) {
+    font-size: 55px;
+    line-height: 1.3;
+  }
+  @include max-screen(767px) {
+    font-size: 46px;
+  }
+}
+
+a {
+  color: $main_font_color;
+  text-decoration: none;
+  @include max-screen(1200px) {
+    font-size: 20px;
+    line-height: 1.3;
+  }@include max-screen(767px) {
+    font-size: 18px;
+  }
+}
+
+p {
+  font-size: 30px;
+  line-height: 45px;
+  @include max-screen(1200px) {
+    font-size: 24px;
+    line-height: 1.3;
+  }@include max-screen(767px) {
+    font-size: 22px;
+  }
+}
+
+//______________________________________
+//HEADER
+header {
+  padding-top: 40px;
+  @include max-screen(992px) {
+    padding-top: 25px;
+  }
+
+
+  .navigation {
+    >a:first-child {
+      font-weight: 800;
+      font-size: 35px;
+      line-height: 52px;
+      color: #58A9A5;
+      display: inline-flex;
+      @include max-screen(992px) {
+        font-size: 28px;
+        line-height: 1.3;
+      }
+
+      img {
+        margin-right: 14px;
+      }
+    }
+
+    .nav {
+      ul {
+        list-style: none;
+
+        li {
+          margin: 0 30px;
+          @include max-screen(992px) {
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+
+    .call_to_action {
+      font-weight: 500;
+      color: #FFFFFF;
+      background: #58A9A5;
+      border-radius: 15px;
+      text-align: center;
+      padding: 21px 45px;
+      @include max-screen(992px) {
+        padding: 16px 35px;
+      }
+    }
+  }
+}
+
+//______________________________________
+//MAIN_BANNER
+.main_banner {
+  padding-top: 126px;
+  padding-bottom: 71px;
+
+  @include max-screen(992px) {
+    padding-top: 60px;
+    padding-bottom: 35px;
+  }
+
+  .description {
+    @include max-screen(992px) {
+      flex-direction: column;
+    }
+  }
+
+
+  .main_description {
+    max-width: 743px;
+    @include max-screen(992px) {
+      padding-bottom: 35px;
+    }@include max-screen(767px) {
+      max-width: 420px;
+    }
+
+    h1 {
+      margin-bottom: 50px;
+      @include max-screen(992px){
+        margin-bottom: 35px;
+      }
+    }
+
+    p {
+      margin-bottom: 50px;
+      @include max-screen(992px){
+        margin-bottom: 35px;
+      }
+    }
+
+    a {
+      font-weight: 700;
+      color: #FFFFFF;
+      background: #58A9A5;
+      border-radius: 20px 20px 20px 0;
+      text-align: center;
+      padding: 21px 83px 21px 90px;
+    }
+  }
+
+  .for_img {
+    max-width: 833px;
+    background-image: url("../images/rectangle_9.png");
+    padding: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include max-screen(992px) {
+      max-width: 500px;
+    }
+    @include max-screen(767px) {
+      max-width: 420px;
+      padding: 20px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+//______________________________________
+//HOW_IT_WORK
+.how_it_work {
+  padding-top: 120px;
+  @include max-screen(992px){
+    padding-top: 35px;
+  }
+
+  .how_description {
+    max-width: 506px;
+    margin: auto;
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
